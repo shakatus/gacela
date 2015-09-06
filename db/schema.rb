@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150905082827) do
+ActiveRecord::Schema.define(version: 20150906044110) do
 
   create_table "enterprises", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -47,6 +47,18 @@ ActiveRecord::Schema.define(version: 20150905082827) do
 
   add_index "enterprises", ["email"], name: "index_enterprises_on_email", unique: true
   add_index "enterprises", ["reset_password_token"], name: "index_enterprises_on_reset_password_token", unique: true
+
+  create_table "relations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "enterprise_id"
+    t.integer  "level",         default: 0
+    t.boolean  "check",         default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "relations", ["enterprise_id"], name: "index_relations_on_enterprise_id"
+  add_index "relations", ["user_id"], name: "index_relations_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",   null: false
