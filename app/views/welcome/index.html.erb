@@ -1,13 +1,15 @@
 <h1>Gazella Project</h1>
-<% unless user_signed_in? && enterprise_signed_in?%>
+<% unless user_signed_in? || enterprise_signed_in?%>
     <h2>Persona</h2>
     <%= link_to "Ingresar", new_user_session_path%>|<%= link_to "Registrarse", new_user_registration_path%>
     <h2>Empresa</h2>
     <%= link_to "Ingresar", new_enterprise_session_path%>|<%= link_to "Registrarse", new_enterprise_registration_path%>
 <%else%>
     <% if user_signed_in? %>
-      <h2>Hola Persona</h2>
+      <h2>Hola <%= current_user.name %></h2>
+      <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
     <% else %>
       <h2>Hola Empresa</h2>
+      <%= link_to "Cerrar sesión", destroy_enterprise_session_path, method: :delete %>
     <% end %>
 <%end%>

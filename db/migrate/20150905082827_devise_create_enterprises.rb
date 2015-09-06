@@ -44,12 +44,16 @@ class DeviseCreateEnterprises < ActiveRecord::Migration
 	t.string :date
 	t.string :duns
 	t.string :country
+  #FriendlyId
+  t.string  :nickname, :null => false
+  t.string  :slug, :null => false
 
       t.timestamps null: false
     end
 
     add_index :enterprises, :email,                unique: true
     add_index :enterprises, :reset_password_token, unique: true
+    add_index :enterprises, :slug,                 unique: true
     # add_index :enterprises, :confirmation_token,   unique: true
     # add_index :enterprises, :unlock_token,         unique: true
   end

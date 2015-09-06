@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get 'users/:id' => "user#show"
+  get "enterprises/:id" => "enterprise#show"
+
   devise_for :enterprises
   devise_for :users
   get 'welcome/index'

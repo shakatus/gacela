@@ -41,12 +41,15 @@ ActiveRecord::Schema.define(version: 20150906044110) do
     t.string   "date"
     t.string   "duns"
     t.string   "country"
+    t.string   "nickname",                            null: false
+    t.string   "slug",                                null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
 
   add_index "enterprises", ["email"], name: "index_enterprises_on_email", unique: true
   add_index "enterprises", ["reset_password_token"], name: "index_enterprises_on_reset_password_token", unique: true
+  add_index "enterprises", ["slug"], name: "index_enterprises_on_slug", unique: true
 
   create_table "relations", force: :cascade do |t|
     t.integer  "user_id"
