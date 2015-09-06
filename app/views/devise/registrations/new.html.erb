@@ -1,8 +1,76 @@
-<h2>Sign up</h2>
+<h2>Registro</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+  <div class="field">
+    <%= f.label "Nombre" %><br/>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <% if resource_name.to_s == "user" %>
+      <div class="field">
+        <%= f.label "Apellido" %><br/>
+        <%= f.text_field :last_name, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "Telefono" %><br/>
+        <%= f.number_field :phone, autofocus: true %>
+      </div>
+  <% else %>
+      <div class="field">
+        <%= f.label "NIT" %><br/>
+        <%= f.text_field :nit, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "Pais" %><br/>
+        <%= f.text_field :country, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "Ciudad" %><br/>
+        <%= f.text_field :city, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "Departamento" %><br/>
+        <%= f.text_field :departament, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "Direccion" %><br/>
+        <%= f.text_field :direction, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "Nombre" %><br/>
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "Telefono" %><br/>
+        <%= f.number_field :phone, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "Fax" %><br/>
+        <%= f.text_field :fax, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "WebSite" %><br/>
+        <%= f.text_field :web_site, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "Representante Legal" %><br/>
+        <%= f.text_field :rep_legal, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "Fecha" %><br/>
+        <%= f.text_field :date, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label "DUNS" %><br/>
+        <%= f.text_field :duns, autofocus: true %>
+      </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Telefono" %><br/>
+    <%= f.number_field :phone, autofocus: true %>
+  </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -22,7 +90,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Registro" %>
   </div>
 <% end %>
 
