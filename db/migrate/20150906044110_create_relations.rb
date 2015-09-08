@@ -3,7 +3,7 @@ class CreateRelations < ActiveRecord::Migration
     create_table :relations do |t|
       t.references :user, index: true
       t.references :enterprise, index: true
-      t.integer :level, default: 0
+      t.references :level, default: 0
       t.boolean :check, default: false
       t.timestamps null: false
     end

@@ -1,1 +1,7 @@
 <h1>Hola <%= @enterprise.name%></h1>
+
+<%= form_tag("/relations/create", method: "post") do %>
+    <%= email_field(:user, :address) %>
+    <%= select("level", "profile_id", Level.all.collect {|p| [ p.level, p.id ] }) %>
+    <%= submit_tag("asociar") %>
+<% end %>

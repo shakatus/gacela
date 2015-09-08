@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150906044110) do
+ActiveRecord::Schema.define(version: 20150907224250) do
 
   create_table "enterprises", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -51,10 +51,16 @@ ActiveRecord::Schema.define(version: 20150906044110) do
   add_index "enterprises", ["reset_password_token"], name: "index_enterprises_on_reset_password_token", unique: true
   add_index "enterprises", ["slug"], name: "index_enterprises_on_slug", unique: true
 
+  create_table "levels", force: :cascade do |t|
+    t.string   "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "relations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "enterprise_id"
-    t.integer  "level",         default: 0
+    t.integer  "level_id",      default: 0
     t.boolean  "check",         default: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false

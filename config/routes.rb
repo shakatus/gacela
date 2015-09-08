@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :enterprises
   devise_for :users
 
+  post 'relations/create' => 'relation#create'
+
   get 'users/:id' => "user#show"
   get "enterprises/:id" => "enterprise#show"
 

@@ -1,0 +1,30 @@
+es:
+  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Por favor especifique una direccion de correo electronico"
+              taken: "Por favor use un correo electronico diferente"
+              invalid: "Por favor utilice una direccion de correo valida"
+            password:
+              blank: "Por favor especifique una contraseña"
+              confirmation: "Password does not match"
+            password_confirmation:
+              blank: "Por favor confirme su contraseña"
+            nombre:
+              blank: "Por favor digite su primer nombre"
+            apellido:
+              blank: "Por favor digite su apellido"
+            ciudad:
+              blank: "Por favor ingrese su ciudad"
+            slug:
+              taken: "Por favor ingrese un nickname diferente"
+        product:
+          attributes:
+            referencia:
+              blank: "Por favor digite una referencia"
+            cantidad:
+              blank: "Por favor ingrese una cantidad"
