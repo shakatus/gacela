@@ -2,6 +2,6 @@
 
 <%= form_tag("/relations/create", method: "post") do %>
     <%= email_field(:user, :address) %>
-    <%= select("level", "profile_id", Level.all.collect {|p| [ p.level, p.id ] }) %>
+    <%= select("level", "profile_id", Relation.levels.collect {|p| [ p[0], p[1] ] }) %>
     <%= submit_tag("asociar") %>
 <% end %>

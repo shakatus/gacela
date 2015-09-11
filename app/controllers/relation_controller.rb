@@ -7,7 +7,7 @@ class RelationController < ApplicationController
         format.html { redirect_to :back, notice: 'correo no existe' }
       end
     else
-      @relation = Relation.create(enterprise_id: current_enterprise.id, user_id: user.id, level_id: level)
+      @relation = Relation.create(enterprise_id: current_enterprise.id, user_id: user.id, level: level.to_i)
       respond_to do |format|
         if @relation.save
           format.html { redirect_to root_path, notice: 'Envio exitoso.' }
